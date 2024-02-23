@@ -6,20 +6,17 @@
   "scripts": {
     "test:weblighthouse": "node ./src/test/qualitycheck/WebLighthouse.mjs",
     "test:mobilelighthouse": "node ./src/test/qualitycheck/MobileLighthouse.mjs",
-
     "//comment": "============================= API Testing  ===================================",
     "test:qa:api": "cross-env NODE_ENV='qa' npx playwright test --trace on ./src/test/scriptLibrary/api",
     "test:dev:api": "cross-env NODE_ENV='dev' npx playwright test --trace on ./src/test/scriptLibrary/api",
     "test:local:api": "cross-env NODE_ENV='dev' npx playwright test --trace on ./src/test/scriptLibrary/api",
-
     "//comment1": "============================= UI Testing  ===================================",
     "test:qa:ui": "cross-env NODE_ENV='qa' npx playwright test --trace on ./src/test/scriptLibrary/ui",
     "test:dev:ui": "cross-env NODE_ENV='dev' npx playwright test --trace on ./src/test/scriptLibrary/ui",
     "test:local:ui": "cross-env NODE_ENV='dev' npx playwright test --trace on ./src/test/scriptLibrary/ui",
-
     "//comment3": "============================= Allure Report Generation =================================",
-    "test:allure_report_generation": "allure generate ./reports/allure-results -o ./reports/allure-report --clean && allure open ./reports/allure-report"
-
+    "report:allure": "allure generate ./reports/allure-results -o ./reports/allure-report --clean && allure open ./reports/allure-report",
+    "report:playwright": "npx playwright show-report ./reports/html-report"
   },
   "author": "DhowlathBasha",
   "license": "ISC",
